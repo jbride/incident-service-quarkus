@@ -25,6 +25,8 @@ public class IncidentEvent {
 
     private String status;
 
+    private String sentimentData;
+
     public String getId() {
         return id;
     }
@@ -59,6 +61,14 @@ public class IncidentEvent {
 
     public String getStatus() {
         return status;
+    }
+
+    public String getSentimentData() {
+        return sentimentData;
+    }
+
+    public void setSentimentData(String sentimentData) {
+        this.sentimentData = sentimentData;
     }
 
     public static class Builder {
@@ -105,6 +115,11 @@ public class IncidentEvent {
             return this;
         }
 
+        public Builder sentimentData(String sentimentData) {
+            ire.sentimentData = sentimentData;
+            return this;
+        }
+
         public Builder status(String status) {
             ire.status = status;
             return this;
@@ -114,4 +129,5 @@ public class IncidentEvent {
             return ire;
         }
     }
+
 }

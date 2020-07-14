@@ -97,6 +97,7 @@ public class IncidentCommandMessageSource {
                         .victimName(incident.getString("victimName"))
                         .victimPhoneNumber(incident.getString("victimPhoneNumber"))
                         .status(incident.getString("status"))
+                        .sentimentData(incident.getString("sentimentData"))
                         .build())
                 .build();
         Jsonb jsonb = null;

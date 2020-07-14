@@ -64,6 +64,9 @@ public class IncidentService {
         if (incident.getString("status") != null && !incident.getString("status").equals(current.getStatus())) {
             current.setStatus(incident.getString("status"));
         }
+        if (incident.getString("sentimentData") != null && !incident.getString("sentimentData").equals(current.getStatus())) {
+            current.setSentimentData(incident.getString("sentimentData"));
+        }
         return fromEntity(current);
     }
 
@@ -99,6 +102,7 @@ public class IncidentService {
                 .put("victimName", r.getVictimName())
                 .put("victimPhoneNumber", r.getVictimPhoneNumber())
                 .put("status", r.getStatus())
+                .put("sentimentData", r.getSentimentData())
                 .put("timestamp", r.getTimestamp());
     }
 
@@ -117,6 +121,7 @@ public class IncidentService {
         entity.setVictimPhoneNumber(incident.getString("victimPhoneNumber"));
         entity.setReportedTime(Instant.ofEpochMilli(reportedTimestamp));
         entity.setStatus(IncidentStatus.REPORTED.name());
+        entity.setSentimentData(incident.getString("sentimentData"));
         return entity;
     }
 

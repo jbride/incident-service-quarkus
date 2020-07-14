@@ -64,6 +64,9 @@ public class Incident {
     @Version
     private long version;
 
+    @Column(name = "sentimentData")
+    private String sentimentData;
+
     public long getId() {
         return id;
     }
@@ -146,6 +149,14 @@ public class Incident {
 
     public long getVersion() {
         return version;
+    }
+
+    public String getSentimentData() {
+        return sentimentData;
+    }
+    
+    public void setSentimentData(String sentimentData) {
+        this.sentimentData = sentimentData;
     }
 
 }

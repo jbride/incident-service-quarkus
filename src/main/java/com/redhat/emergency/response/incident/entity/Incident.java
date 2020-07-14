@@ -64,7 +64,7 @@ public class Incident {
     @Version
     private long version;
 
-    @Column(name = "sentimentData")
+    @Column(name = "sentiment_data")
     private String sentimentData;
 
     public long getId() {
